@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td colspan="2" onclick="digitBtnPressed(0)">0</td>
-            <td>AC</td>
+            <td onclick="btnACPressed()">AC</td>
             <td>/</td>
         </tr>
         <tr>
@@ -44,6 +44,7 @@
     <script>
         let newLine = true;
 
+        // Event handler for when any digit button is pressed
         function digitBtnPressed(btn){
             if (newLine){
                 document.getElementById("inputBox").value = btn;
@@ -54,6 +55,14 @@
             document.getElementById("inputBox").value = currentValue + btn;
             }
         }
+
+        //Event handler for when the AC button is pressed
+        function btnACPressed(){
+            document.getElementById("inputBox").value = 0;
+            newLine = true;
+        }
+
+
     </script>
 </body>
 </html>
